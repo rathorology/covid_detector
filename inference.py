@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--dataset", required=True,
+ap.add_argument("-d", "--dataset", required=True,
                 help="path to input image directory")
 ap.add_argument("-m", "--model", type=str, default="model.h5",
                 help="path to trained model")

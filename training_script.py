@@ -9,7 +9,7 @@ from tensorflow.keras.layers import Dropout
 from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import Input
-from tensorflow.keras.models import Model,load_model
+from tensorflow.keras.models import Model, load_model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import LabelBinarizer
@@ -121,7 +121,6 @@ H = model.fit_generator(
     validation_steps=len(valX) // BS,
     epochs=EPOCHS)
 
-
 # make predictions on the testing set
 predIdxs = model.predict(testX, batch_size=BS)
 
@@ -142,7 +141,7 @@ sensitivity = cm[0, 0] / (cm[0, 0] + cm[0, 1])
 specificity = cm[1, 1] / (cm[1, 0] + cm[1, 1])
 
 # show the confusion matrix, accuracy, sensitivity, and specificity
-print(cm)
+print("Confusion matrix :", cm)
 print("acc: {:.4f}".format(acc))
 print("sensitivity: {:.4f}".format(sensitivity))
 print("specificity: {:.4f}".format(specificity))
